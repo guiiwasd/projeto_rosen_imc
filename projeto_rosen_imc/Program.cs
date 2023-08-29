@@ -1,5 +1,5 @@
 ﻿using projeto_rosen_imc;
-using System;
+using System.Globalization;
 
 class Program
 {
@@ -28,16 +28,16 @@ class Program
             case 1:
                 Console.WriteLine("Você escolheu SOMADOR!");
                 Console.WriteLine("Insira o valor do primeiro número: ");
-                double num1 = double.Parse(Console.ReadLine());
+                double num1 = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
                 Console.WriteLine("Insira o valor do segundo número: ");
-                double num2 = double.Parse(Console.ReadLine());
+                double num2 = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
                 Console.WriteLine($"A soma dos números {num1} e {num2} é {Somador.Soma(num1, num2)}.");
                 break;
 
             case 2:
                 Console.WriteLine("Você escolheu CONVERSOR!");
                 Console.WriteLine("Insira o valor em metros: ");
-                double metros = double.Parse(Console.ReadLine());
+                double metros = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
                 Console.WriteLine("A medida {0} metros corresponde a {1}", metros, Conversor.MetrosMilimetros(metros));
                 break;
 
@@ -50,9 +50,9 @@ class Program
                 Console.WriteLine("Obesidade de grau II (SEVERA) = IMC Entre 35.0 e 39.9");
                 Console.WriteLine("Obesidade de grau III (MÓRBIDA) = IMC Acima de 40.0");
                 Console.WriteLine("Insira o valor do peso (em kg): ");
-                double pesoIMC = double.Parse(Console.ReadLine());
+                double pesoIMC = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
                 Console.WriteLine("Insira o valor da altura (em metros): ");
-                double alturaIMC = Convert.ToDouble(Console.ReadLine());
+                double alturaIMC = Convert.ToDouble(Console.ReadLine(), new CultureInfo("en-US"));
 
                 if (CalculoIMC.IMCTotal(alturaIMC, pesoIMC) > 16.0 && CalculoIMC.IMCTotal(alturaIMC, pesoIMC) <= 18.5)
                 {
