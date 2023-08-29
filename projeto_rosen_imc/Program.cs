@@ -83,6 +83,10 @@ class Program
                     Console.WriteLine($"Usuário(a) com peso e altura equivalentes a {pesoIMC} e {alturaIMC} se encontra com desnutrição grave a depender da idade. \nIMC: {CalculoIMC.IMCTotal(alturaIMC, pesoIMC):F2}");
                 }
                 break;
+
+            default:
+                Console.WriteLine("Valor inválido. Por favor, tente novamente.");
+                break;  
         }
     }
 }
